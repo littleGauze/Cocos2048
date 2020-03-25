@@ -1,2 +1,2 @@
-# Cocos2048
-developed by cocos creator
+# Cocos 2048
+The classic 2048 game.
