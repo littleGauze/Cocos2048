@@ -20,9 +20,19 @@ export default class NumberSprite extends cc.Component {
         this.sp.node.height = 112.5;
     }
 
-    public createEffect(): void {
+    public enterEffect(): void {
+        const action1: cc.ActionInterval = cc.scaleTo(0, 0.6);
+        const action2: cc.ActionInterval = cc.scaleTo(this.duration * 2, 1).easing(cc.easeIn(3));
+        this.node.runAction(cc.sequence(action1, action2));
+    }
+
+    public mergeEffect(): void {
         const action1: cc.ActionInterval = cc.scaleTo(this.duration, 1.15).easing(cc.easeCubicActionOut());
         const action2: cc.ActionInterval = cc.scaleTo(this.duration, 1).easing(cc.easeCubicActionIn());
         this.node.runAction(cc.sequence(action1, action2));
+    }
+
+    public moveEffect(to: cc.Vec2): void {
+        // TODO: move logic
     }
 }
